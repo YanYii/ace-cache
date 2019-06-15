@@ -81,7 +81,7 @@ public class RedisConfig {
         int database = Integer.parseInt(this.database);
         if (null == pool) {
             if (StringUtils.isBlank(password)) {
-                pool = new JedisPool(constructJedisPoolConfig(), ip, port, timeout);
+                pool = new JedisPool(constructJedisPoolConfig(), ip, port, timeout, null, database);
             } else {
                 pool = new JedisPool(constructJedisPoolConfig(), ip, port, timeout, password, database);
             }
